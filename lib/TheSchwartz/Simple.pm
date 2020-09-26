@@ -56,7 +56,7 @@ sub insert {
             }
             $sth->execute();
 
-            $jobid = _insert_id( $dbh, $sth, "job", "jobid" );
+            $jobid = _insert_id( $dbh, $sth, "$self->{prefix}job", "jobid" );
         };
 
         return $jobid if defined $jobid;
